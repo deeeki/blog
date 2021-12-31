@@ -8,7 +8,7 @@ import Layout from '../../components/layout'
 import { getPostBySlug, getAllPosts } from '../../lib/api'
 import PostTitle from '../../components/post-title'
 import Head from 'next/head'
-import { CMS_NAME } from '../../lib/constants'
+import { SITE_NAME } from '../../lib/constants'
 import markdownToHtml from '../../lib/markdownToHtml'
 import PostType from '../../types/post'
 
@@ -26,7 +26,7 @@ const Post = ({ post, morePosts, preview }: Props) => {
   return (
     <Layout preview={preview}>
       <Container>
-        <Header />
+        <Header title={SITE_NAME} />
         {router.isFallback ? (
           <PostTitle>Loading…</PostTitle>
         ) : (
@@ -34,9 +34,11 @@ const Post = ({ post, morePosts, preview }: Props) => {
             <article className="mb-32">
               <Head>
                 <title>
-                  {post.title} | Next.js Blog Example with {CMS_NAME}
+                  {post.title} | {SITE_NAME}
                 </title>
-                <meta property="og:image" content={post.ogImage.url} />
+                {post.ogImage &&
+                  <meta property="og:image" content={post.ogImage.url} />
+                }
               </Head>
               <PostHeader
                 title={post.title}
