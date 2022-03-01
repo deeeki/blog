@@ -11,6 +11,7 @@ import Head from 'next/head'
 import { SITE_NAME } from '../../lib/constants'
 import markdownToHtml from '../../lib/markdownToHtml'
 import PostType from '../../types/post'
+import 'highlight.js/styles/github.css';
 
 type Props = {
   post: PostType

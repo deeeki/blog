@@ -16,3 +16,27 @@
 .markdown h3 {
   @apply text-2xl mt-8 mb-4 leading-snug;
 }
+
+.markdown thead > tr {
+  @apply border-b border-gray-400;
+}
+
+.markdown td {
+  @apply p-1;
+}
+
+.markdown ul {
+  @apply list-disc pl-5;
+}
+
+.markdown li > ul {
+  @apply my-0;
+}
+
+.markdown code {
+  @apply bg-gray-100;
+}
+
+.markdown pre {
+  @apply border border-gray-200 text-sm;
+}
