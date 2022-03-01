@@ -8,7 +8,7 @@ import Layout from '../../components/layout'
 import { getPostBySlug, getAllPosts } from '../../lib/api'
 import PostTitle from '../../components/post-title'
 import Head from 'next/head'
-import { SITE_NAME } from '../../lib/constants'
+import { SITE_NAME, SITE_HOST } from '../../lib/constants'
 import markdownToHtml from '../../lib/markdownToHtml'
 import PostType from '../../types/post'
 import 'highlight.js/styles/github.css';
@@ -38,7 +38,7 @@ const Post = ({ post, morePosts, preview }: Props) => {
                   {post.title} | {SITE_NAME}
                 </title>
                 {post.ogImage &&
-                  <meta property="og:image" content={post.ogImage.url} />
+                  <meta property="og:image" content={`https://${SITE_HOST}${post.ogImage.url}`} />
                 }
               </Head>
               <PostHeader
