@@ -7,14 +7,15 @@ const Footer = () => {
       <Container>
         <div className="py-28">
           <h3 className="font-bold tracking-tighter leading-tight text-center lg:text-left mb-10 lg:mb-0 lg:pr-4 lg:w-1/2">
-            Statically Generated with Next.js.
+            Statically Generated with&nbsp;
+            <a
+              href={`https://github.com/vercel/next.js/tree/canary/examples/${EXAMPLE_PATH}`}
+              className="hover:underline"
+            >
+              Next.js
+            </a>
+            .
           </h3>
-          <a
-            href={`https://github.com/vercel/next.js/tree/canary/examples/${EXAMPLE_PATH}`}
-            className="hover:underline"
-          >
-            Example Codes on GitHub
-          </a>
         </div>
       </Container>
     </footer>
